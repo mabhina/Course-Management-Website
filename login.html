@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login form</title>
+        <link rel="stylesheet" type="text/css" href="style.css"> <!-- linking style sheet -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
+       
+    </head>
+    <body>
+        <div class="jumbotron" style="margin-bottom: 0px;">
+        <h1>LOGIN TO CMS</h1>
+            <P>You need to login to enrol and view your timetable</P>
+        </div>
+        <nav class="navbar navbar-expand-md navbar-light bg-transparent  ml-auto">
+        <a class="navbar-brand" href="doWellHomePage.html"><img src="images/logocomplete.png" ></a>
+            <span class="navbar-text">COURSE MANAGEMENT SYSTEM-LOGIN</span>
+        </nav>
+        <div class="mylogin" align="center">
+            <h1 style="color: indianred;">Login here</h1>
+            <form  id="loginform" action="timetable.html" method="post" onsubmit="return validate();">
+                <p>
+                <label>Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter username">
+                </p>
+                <p>
+                <label>Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password">
+                </p>
+                <p>
+                <input type="submit" class="btn1" name="submit" value="Login">
+                    </p>
+                <p>
+                <a href="registration.html">Don't have an account?</a>
+                </p>
+            </form>
+        </div>
+        <script>
+            function validate(){
+                var str=/^(?=.*\d)(?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[A-Z]).{6,12}$/;
+              if($("#username").val()=="")
+                    {
+                        alert("Please enter your username");
+                        return false;
+                    }
+                else if (!$("#password").val().match(str)){
+                    alert("Password must be atleast 6 characters and contain atleast one number and one uppercase and one lowercase letter,and one special case character");
+                    return false; 
+                }
+            }
+        </script>
+    </body>
+</html>

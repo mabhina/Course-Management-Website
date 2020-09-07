@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>StudentRegistrationPortal</title>
+        <link rel="stylesheet" href="style.css"> <!-- linking style sheet -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
+    </head>
+    <body>
+        <div class="jumbotron" style="margin-bottom: 0px;">
+        <h1>REGISTER AS A STUDENT</h1>
+            <P>Register to select your timetable</P>
+        </div>
+        <nav class="navbar navbar-expand-md navbar-light bg-transparent  ml-auto">
+        <a class="navbar-brand" href="doWellHomePage.html"><img src="images/logocomplete.png" ></a>
+            <span class="navbar-text">COURSE MANAGEMENT SYSTEM-REGISTRATION FOR STUDENT</span>
+        </nav>
+        
+        <div  align="center" class="loginpage">
+        <form id="signupform" method="" action="" onsubmit="return validate();">
+            <p>
+                <label>Student ID: </label>
+                <input type="text" id="studentid" name="username" placeholder="Enter your StudentID"/>
+            </p>
+            
+            <p>
+                <label>Last Name: </label>
+                <input type="text" id="lastname" name="lastname" placeholder="Enter your Last name"/>
+            </p>
+            <p>
+                <label>First Name: </label>
+                <input type="text" id="firstname" name="firstname" placeholder="Enter your First name"/>
+            </p>
+            <p>
+                <label>Password: </label>
+                <input type="password" id="password" name="password" placeholder="New Password" />
+            </p> 
+            
+            <p>
+                <label>Confirm Password: </label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter the password" />
+            </p>
+            <p>
+                <label>Email: </label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" />
+            </p>
+            <p>
+                <label>Phone number: </label>
+                <input type="text" id="phonenumber" name="phonenumber" placeholder="Enter your phone no"/>
+            </p>
+            <p>
+                <label>Address: </label>
+                <input type="text" id="address" name="address" placeholder="Enter your address"/>
+            </p>
+            <p>
+                <label>Date of Birth: </label>
+                <input type="date" id="dateofbirth" name="dateofbirth"/>
+            </p>
+            <p>
+                <label>Agree the terms and conditions</label>
+                <input type="checkbox" class="checkbox" id="agree" name="agree" /><br>
+                
+            </p>
+            <p>
+                <input type="submit" class="btn1" value="Register" />
+            </p>
+        </form>
+        </div>
+        <script>
+            function validate(){
+                var str=/^(?=.*\d)(?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[A-Z]).{6,12}$/;
+                if ($("#studentid").val()=="")
+                    {
+                        alert("Please enter your Student ID");
+                    }
+                else if($("#lastname").val()=="")
+                    {
+                        alert("Please enter your username");
+                        return false;
+                    }
+                else if($("#firstname").val()=="")
+                    {
+                        alert("Please enter your username");
+                        return false;
+                    }
+                else if (!$("#password").val().match(str)){
+                    alert("Password must be atleast 6 characters and contain atleast one number and one uppercase and one lowercase letter,and one special case character");
+                    return false; 
+                } else if ($("#confirm_password").val()==""){
+                    alert("Please re-type your password");
+                    return false;
+                } else if ($("#confirm_password").val() != $("#password").val()){
+                    alert("Passwords do not match"); 
+                    return false;
+                } else if ($("#email").val()==""){
+                    alert("Please enter your email");
+                    return false;
+                } else if (!$("#agree").is(":checked")){
+                    alert("You must agree to the terms and conditions");
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Enrolment</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+      
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-light bg-light  ml-auto sticky-top">
+            <img src="images/logocomplete.png">
+            <ul  class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="doWellHomePage.html">LOGOUT</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">AMISHRA</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <p>Filter to see which units are available</p>
+        <div class="dropdown">
+  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Years
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">2020</a>
+    <a class="dropdown-item" href="#">2019</a>
+    <a class="dropdown-item" href="#">2018</a>
+  </div>
+        </div>
+        <div class="dropdown">
+   <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Semester
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Semester 1</a>
+    <a class="dropdown-item" href="#">Semester 2</a>
+    <a class="dropdown-item" href="#">Spring School</a>
+      <a class="dropdown-item" href="#">Winter School</a>
+  </div>         
+</div>
+         <div class="dropdown">
+   <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Campus
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Pandora</a>
+    <a class="dropdown-item" href="#">Rivendell</a>
+    <a class="dropdown-item" href="#">Neverland</a>
+  </div> 
+   </div>
+            <p><button class="btn1" value="Search">SEARCH</button></p>
+            
+</div>
+        <div class="container">
+        <h3>UNIT AVAILABILITIES</h3>
+            <table class="table" name="unitdetails">
+                <tr colspan="2">
+                    <td><H4>KIT502-Web Development</H4></td>    
+                </tr>
+                <tr>
+                    <td>Available</td>
+                    <td>Semester 1, 2, oncampus</td> 
+                    <td><input type="checkbox">Enrol</td>
+                </tr>
+                <tr>
+                    <td><a href="unitDetails.html">MoreDetails</a></td>
+                </tr>
+                <!------Anotherunit---->
+                <tr colspan="2">
+                    <td><H4>KIT503-Project Management</H4></td>               
+                </tr>
+                <TR>
+                <td>Available</td>
+                <td>Semester 1, 2, oncampus</td> 
+                <td><input type="checkbox">Enrol</td>
+                </TR>
+                <tr><td><a href="unitDetails.html">MoreDetails</a></td></tr>
+                <tr>
+                <td><button class="btn btn-danger">Enrol</button></td>
+                </tr>
+            </table>   
+        </div>  
+        <script>
+            <!-----display selected item in dropdown-menu---->
+            $('.dropdown-item').on('click',  function(){
+            var btn = $(this).parent().siblings('button');
+            $(btn).text($(this).text());
+            $(btn).val($(this).text());
+        });
+        </script>
+    </body>
+</html>

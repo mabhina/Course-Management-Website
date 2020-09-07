@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Tutorial Allocation</title>
+        <link rel="stylesheet" href="style.css">
+         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    </head>
+    <body style="background:none;">
+        <nav class="navbar navbar-expand-md navbar-light bg-light  ml-auto sticky-top">
+            <img src="images/logocomplete.png">
+            <h3>UDW Tutorial Allocation Page</h3>
+            <ul  class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="timetable.html">TIMETABLE</a></li>
+                <li class="nav-item"><a class="nav-link" href="doWellHomePage.html">LOGOUT</a></li>
+            </ul>
+        </nav>
+        <div>
+           <div class="row">
+                <div class="col-sm-4" style="margin-left: 20px;">
+                    <table style="border: 2px solid orange; box-sizing: border-box; width:300px;">
+                        <tr>
+                            <td rowspan="2"><i class="fa fa-user"></i></td>
+                            <td>email@abc.au</td>
+                        </tr>
+                        <tr>
+                            <td>Unit name</td>
+                        </tr>
+                    </table>
+                    <table style="border: 2px solid orange; box-sizing: border-box; width:300px;">
+                        <thead>
+                        <th><h6>Enrolled Units</h6></th>
+                        </thead>
+                        <tr>
+                            <td id="firstunit">1. KIT506-Software Development
+                            </td>
+                            <td class="toggleicon"><i class="fa fa-angle-down"  id="show" style="font-size:20px; float: right;"></i></td>
+                        </tr>
+                        <tr><table id="unitone" style="border: 2px solid orange; box-sizing: border-box; width:300px;">
+                            <tr>
+                                <td><a href="#" id="lecinfo">TUT  </a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>LEC</td>
+                            </tr>
+                            
+                            </table></tr>
+                        <tr>
+                            <td>2. KIT503-Web Development
+                            </td>
+                            <td><i class="fa fa-angle-down"></i></td>
+                        </tr>
+                        <tr><table style="border: 2px solid orange; box-sizing: border-box; width:300px;">
+                            <tr>
+                                <td>LEC</td>
+                            </tr>
+                            <tr>
+                                <td>TUT</td>
+                            </tr>
+                            
+                            </table></tr>
+                        <tr>
+                            <td>3. KIT503-Project Management
+                            </td>
+                            <td><i class="fa fa-angle-down"></i></td>
+                        </tr>
+                        <tr><table style="border: 2px solid orange; box-sizing: border-box; width:300px;">
+                            <tr>
+                                <td>LEC</td>
+                            </tr>
+                            <tr>
+                                <td>TUT</td>
+                            </tr>
+                            </table>
+                        </tr>
+                    </table>
+                </div>
+            <div class="col-sm-6"> 
+                
+                <h5> Unit selected:  <span id="status">Allocated</span></h5>
+                <table class="booktut" style="display: none;">
+                    <thead>
+                        <th></th>
+                        <th class="activity">Activity</th>
+                        <th id="day">Day</th>
+                        <th id="time">Time</th>
+                        <th id="capacity">Capacity</th>
+                        <th id="campus">Campus</th>
+                        <th id="location">Location</th>
+                    </thead>
+                    <tr>
+                        <td><button id="mybtn" class="button btn-primary" value="Available">Available</button></td>
+                        <td class="activity">TUT-A</td>
+                        <td>Tuesday</td>
+                        <td>3-5 p.m</td>
+                        <td>15</td>
+                        <td>Newnham</td>
+                        <td>NH2013</td>
+                    </tr>
+                    <tr>
+                        <td><button class="button btn-primary" value="Available">Available</button></td>
+                        <td>TUT-B</td>
+                        <td>Thursday</td>
+                        <td>8-9 a.m</td>
+                        <td>20</td>
+                        <td>Newnham</td>
+                        <td>NHV195</td>
+                    </tr>
+                    <tr>
+                        <td><button class="button btn-primary">Available</button></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+            
+            </div>
+            
+        </div>
+        <script>
+        //Code that allows the user to select only one tutorial. User needs to deselect before choosing another one.
+            $('.button').click(function(){
+            var $this = $(this);
+            $this.toggleClass('Available');
+            if($this.hasClass('Available'))
+            {
+                $this.text('Allocated'); 
+                $this.css("background-color","green");
+                $('.button').not(this).prop('disabled',true);
+            } 
+            else 
+            {
+                $this.text('Available');
+                $this.css("background-color","dodgerblue");
+                $('.button').not(this).prop('disabled',false);
+            }
+            });
+            //code to show each unit details
+  
+        </script>
+        <script>
+                  $(document).ready(function(){ 
+                $("#show").click(function(){
+                
+                    if($("#unitone").is(":visible")){
+                        $("#unitone").hide();
+                    }
+                    else{
+                        $("#unitone").css('display','block'); 
+                        $("#status").text('KIT506-Software Development');
+                    }
+            });
+            });
+            $("#lecinfo").click(function() {
+                    $(".booktut").show();
+            commit(); // moved from the onClick attribute
+                });
+        </script>
+    </body>
+</html>

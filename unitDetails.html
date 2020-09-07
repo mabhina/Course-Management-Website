@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="style.css">
+          <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        
+        <title>UnitDetails</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+    </head>
+    <body>
+        <div class="jumbotron" style="margin-bottom: 0px;">
+            <h1>UNIT DETAILS</h1>
+            
+        </div>
+        <nav class="navbar navbar-expand-md navbar-light bg-transparent  ml-auto">
+            <a class="navbar-brand" href="doWellHomePage.html"><img src="images/logocomplete.png" ></a>
+            <span class="navbar-text">UNIT DETAILS</span>
+            <div class="inputg">
+                <input type="text" style="width: 250px;" placeholder="Enter the unit name or code">
+                <input type="button" value="search">
+            </div>
+        </nav>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <i id="tButton" class="fa fa-angle-double-down" style="font-size:36px; float: right;"></i>
+                    <H2> KIT502 Web Dvelopment</H2>
+                    <div id="remove">
+                    <p>Brief Description:  This unit will be about....</p>
+                    <h2>Summary</h2>
+                    <table class="table" name="unitDetails" style="border: 2px orange solid;">
+                        <tr>
+                            <td>Unit name</td>
+                            <td id="unitname">Web Development</td>
+                
+                        </tr>
+                        <tr>
+                            <td>Unit Code</td>
+                            <td id="unitcode">KIT502</td>
+                
+                        </tr>
+                        <tr>
+                            <td>Unit Coordinator</td>
+                            <td id="unitcoordinator"><a href="#">Mr. James Bond</a></td>
+                        </tr>
+                        <tr>
+                            <td>Lecturer</td>
+                            <td>Ms. Nancy Drew</td>
+                        </tr>
+                    </table> 
+                    <h2>Availability</h2>
+                    <table class="table" style="border: 2px orange solid;">
+                        <tr>
+                            <td>Semester</td>
+                            <td id="semester">Semester 1, Semester 2</td>
+                        </tr>
+                        <tr>
+                        <tr>
+                            <td>Campus</td>
+                            <td id="campus">Pandora</td>
+                        </tr>
+                    </table>
+            
+                    </div> 
+                    <div class="col-md-2"> 
+                        <a class="btn btn-primary" href="unitEnrolment.html">ENROL</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+            <div class="col-md-10">
+                <i id="tButton1" class="fa fa-angle-double-down" style="font-size:36px; float: right;"></i>
+        <H2> KIT503 Project Management</H2>
+                <div id="remove1">
+            <p>Brief Description:  This unit will be about....</p>
+        <h2>Summary</h2>
+         <table class="table" name="unitDetails" style="border: 2px orange solid;">
+            <tr>
+                <td>Unit name</td>
+                <td id="unitname">Web Development</td>
+                
+            </tr>
+            <tr>
+                <td>Unit Code</td>
+                <td id="unitcode">KIT502</td>
+                
+            </tr>
+            <tr>
+                <td>Unit Coordinator</td>
+                <td id="unitcoordinator"><a href="#">Mr. James Bond</a></td>
+            </tr>
+             <tr>
+                <td>Lecturer</td>
+                 <td>Ms. Nancy Drew</td>
+             </tr>
+        </table> 
+            <h2>Availability</h2>
+            <table class="table" style="border: 2px orange solid;">
+            <tr>
+                <td>Semester</td>
+                <td id="semester">Semester 1, Semester 2</td>
+            </tr>
+            <tr>
+               <tr>
+                <td>Campus</td>
+                <td id="campus">Rivendell</td>
+            </tr>
+            </table>
+            
+                </div> 
+                <div class="col-md-2"> 
+                    <a class="btn btn-primary" href="unitEnrolment.html">ENROL</a>
+                </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){ 
+                $("#tButton").click(function(){
+                
+                    if($("#remove").is(":visible")){
+                        $("#remove").slideUp(1000);
+                    }
+                    else{
+                        $("#remove").slideDown(1000).css('display','block'); 
+                    }
+            });
+            });
+            $(document).ready(function(){ 
+                $("#tButton1").click(function(){
+                
+                    if($("#remove1").is(":visible")){
+                        $("#remove1").slideUp(1000);
+                    }
+                    else{
+                        $("#remove1").slideDown(1000).css('display','block'); 
+                    }
+            });
+            });
+        </script>
+                
+    </body>
+</html>
